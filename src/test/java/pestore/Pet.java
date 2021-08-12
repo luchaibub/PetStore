@@ -43,13 +43,6 @@ public class Pet {
                 .log().all()
                 .statusCode(200)
         ;
-
-        //  mamae e legal
-
-        // outra coisa
-
-
-
     }
 }
 
