@@ -11,11 +11,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 import static io.restassured.RestAssured.given;
+import static org.hamcrest.CoreMatchers.is;
 
 // 3 - Classe
 public class Pet {
     //3.1 - Atributos
     String uri = "https://petstore.swagger.io/v2/pet";//endereço da entidade Pet
+    private Object value;
 
     // 3.2 - Métodos e Funções
     public String lerJson(String caminhoJson) throws IOException {
@@ -42,6 +44,10 @@ public class Pet {
         .then()  // Então
                 .log().all()
                 .statusCode(200)
+                .body("name", is( "Bidu" ))
+                .body("status", is("available"))
+
+
         ;
     }
 }
